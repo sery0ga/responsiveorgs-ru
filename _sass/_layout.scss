@@ -1,3 +1,10 @@
+body {
+    position: relative;
+    text-rendering: optimizelegibility;
+    -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: "liga";
+    color: rgba(0, 0, 0, 0.8);
+}
 /**
  * Site header
  */
@@ -8,75 +15,99 @@
     // Positioning context for the mobile navigation icon
     position: relative;
 }
-
-.nav {
-
-    li > a {
-        display: block;
-        padding: 4px 20px;
-        font-size: 13px;
-        font-weight: 500;
-        color: #999;
-    }
-
-    .active > a {
-        font-weight: 700;
-        color: black;
-        border-left: 2px solid black;
+.header {
+    padding-bottom: 60px;
+    img {
+        width: 100%
     }
 }
-.nav {
-    margin-top: 40px;
+
+.content {
+    float: right;
+    width: 75%;
 }
-body {
+.left-column {
+    float: left;
+    width: 25%;
+    min-height: 1px;
     position: relative;
+    padding-right: 15px;
+
+    .toc {
+        font-family: $additional-font-family;
+        font-size: 14px;
+        padding-left: 40px;
+        li > a {
+            display: block;
+            padding: 4px 20px;
+            font-size: 13px;
+            font-weight: 500;
+            color: #000;
+        }
+
+        .active > a {
+            font-weight: 700;
+            color: #34880a;
+        }
+        &.affix-top {
+            padding-top: 30px;
+        }
+        &.affix {
+            top: 100px;
+        }
+    }
 }
 
-h1, h2, h3, h4 {
-    font-family: "jaf-bernino-sans","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Verdana,sans-serif;
-}
 
 h3 {
-    font-size: 40px;
+    font-size: 44px;
 }
 h4 {
     font-size: 30px;
 }
 
 .source {
-    font-size: 15px;
+    font-size: 16px;
     font-style: italic;
     color: #9D9D9D;
     font-family: $base-font-family;
 }
 .blockquote {
-    float: left;
     margin-bottom: 50px;
+    width: 100%;
     .text {
-        width: 450px;
-        float: right;
+        display: inline-block;
+        width: 443px;
         border-bottom: 1px solid #9D9D9D;
         border-top: 1px solid #9D9D9D;
-        font-family: Arial;
+        font-family: Roboto;
         font-size: 15px;
         padding: 15px 0px 30px 0px;
     }
     .source {
+        display: inline-block;
         margin-top: 25px;
-        float: left;
-        width: 200px;
-        padding-right: 30px;
+        width: 151px;
+        padding-right: 51px;
     }
 
 }
-.short-quote {
+.hanging-apostrophe {
+    margin-left: -0.5em;
+}
+.highlight {
     font-style: italic;
     margin-top: -$spacing-unit * 0.4;
     margin-bottom: $spacing-unit / 2;
+
+    &.long {
+        margin-top: $spacing-unit * 0.5;
+    }
 }
-.long-quote {
+.citation {
     float: left;
-    font-family: Arial;
+    font-family: Roboto;
+    font-size: 24px;
     margin-bottom: $spacing-unit;
     .content {
         padding-left: $spacing-unit;
@@ -90,34 +121,40 @@ ul {
         list-style: none inside none;
     }
     &.dash {
-        list-style-type: none;
-        margin-left: $spacing-unit * 0.3;
+        margin-bottom: $spacing-unit;
+        list-style: outside none none;
+        margin-left: 0em;
+        padding-left: 1.2em;
+        text-indent: -1em;
         li:before {
-            content: "-";
+            content: "—";
             position: relative;
-            left: -5px;
+            left: -0.2em;
         }
         li {
-            text-indent: -5px;
+            margin-bottom: 0.5em;
+        }
+        li.last {
+            margin-bottom: 0em;
         }
     }
 }
-.clear-bottom-fix {
+.clear-fix {
     margin-bottom: 0px;
 }
 
 .chapter {
-    padding-bottom: 60px;
+    padding-bottom: 85px;
     float: left;
 
     .content {
-        width: 650px;
+        width: 645px;
         float: left;
     }
     .reference {
         float: left;
-        width: 300px;
+        width: 170px;
         font-size: 14px;
-        padding: 5px 0px 0px 75px;
+        margin: 5px 0px 0px 75px;
     }
 }
