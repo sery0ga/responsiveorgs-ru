@@ -3,8 +3,6 @@
 ---
 @charset "utf-8";
 
-
-
 // Our variables
 
 $base-font-size:   22px;
@@ -16,10 +14,6 @@ $spacing-unit:     1.8em;
 $text-color:       #111;
 $background-color: #fff;
 $brand-color:      #4A7735;
-
-$grey-color:       #828282;
-$grey-color-light: lighten($grey-color, 40%);
-$grey-color-dark:  darken($grey-color, 25%);
 
 // Width of the content area
 $content-width:    700px;
