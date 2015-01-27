@@ -27,11 +27,19 @@ body {
     .navbar-brand {
         font-size: 14px;
     }
+    .navbar-nav > li, .navbar-brand {
+        border-top: 2px solid #fff;
+        border-bottom: 2px solid #fff;
+        &.active {
+            border-top: 2px solid $brand-color;
+            a, a:hover {
+                background: none;
+                color: #000;
+            }
+        }
+    }
     .navbar-nav > li > a, .navbar-brand {
         color: #000;
-        &.active {
-            border-top: solid 2px #fff;
-        }
     }
 }
 
@@ -39,14 +47,8 @@ body {
     margin-bottom: 60px;
     text-align: center;
     height: 259px;
-    .cropper {
-        display: inline-block;
-        width: 1300px;
-        overflow: hidden;
-        img {
-            width: 100%;
-        }
-    }
+    background-repeat: no-repeat;
+    background-position: center;
 }
 .infoblock {
     width: 259px;
@@ -94,14 +96,13 @@ body {
             font-weight: 500;
             color: #000;
             &:hover {
-                color: #34880a;
+                color: $brand-color;
                 background: none;
             }
         }
 
         .active > a {
-            color: #34880a;
-            border-top: 1px solid #34880a;
+            color: $brand-color;
         }
         &.affix-top {
             padding-top: 20px;
