@@ -29,24 +29,38 @@ body {
     }
     .navbar-nav > li > a, .navbar-brand {
         color: #000;
+        &.active {
+            border-top: solid 2px #fff;
+        }
     }
 }
 
 .header {
-    padding-bottom: 60px;
-    img {
-        width: 100%
+    margin-bottom: 60px;
+    text-align: center;
+    height: 259px;
+    .cropper {
+        display: inline-block;
+        width: 1300px;
+        overflow: hidden;
+        img {
+            width: 100%;
+        }
     }
 }
 .infoblock {
-    width: 213px;
-    height: 161px;
+    width: 259px;
+    height: 160px;
     background-color: #fff;
     position: absolute;
     padding: 25px 20px;
     left: 25%;
-    top: 180px;
-    border: solid 1px #E8E8E8;
+    top: 160px;
+    border: solid 2px #E8E8E8;
+    img {
+        width: auto;
+        height: auto;
+    }
     .caption {
         padding-top: 20px;
         font-family: $additional-font-family;
@@ -79,6 +93,10 @@ body {
             padding: 4px 0px;
             font-weight: 500;
             color: #000;
+            &:hover {
+                color: #34880a;
+                background: none;
+            }
         }
 
         .active > a {
@@ -107,41 +125,6 @@ body {
         width: 170px;
         font-size: 14px;
         margin: 5px 0px 0px 0px;
-    }
-}
-
-@media screen and (max-width: 1100px) {
-    .chapter {
-        .reference {
-            margin: 5px 0px 0px 5px;
-        }
-    }
-}
-@media screen and (max-width: 1024px) {
-    .left-column {
-        display: none !important;
-    }
-    .right-column {
-        float: left;
-        width: 100%;
-        padding: 0px 10px 0px 20px;
-    }
-}
-@media screen and (max-width: 670px) {
-    .reference {
-        width: 100% !important;
-        text-align: right;
-        padding-right: 20px;
-    }
-    .blockquote {
-        .source {
-            display: none !important;
-        }
-    }
-    .navbar {
-        .navbar-header {
-            padding-left: 0px;
-        }
     }
 }
 
@@ -202,10 +185,11 @@ h4 {
 }
 
 
-
+ul, ol {
+    margin-top: -$spacing-unit * 0.4;
+}
 
 ul {
-    margin-top: -$spacing-unit * 0.4;
     margin-left: $spacing-unit * 0.6;
     &.short {
         list-style: none inside none;
