@@ -2,6 +2,7 @@ body {
     position: relative;
     text-rendering: optimizelegibility;
     -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
     font-feature-settings: "liga";
     color: rgba(0, 0, 0, 0.8);
 }
@@ -19,13 +20,18 @@ body {
     font-size: 14px;
     background-color: #fff;
     border-bottom: solid 1px #E8E8E8;
+    margin-bottom: 0px;
     .navbar-header {
-        padding-left: 30px;
+        padding-left: 40px;
     }
     .navbar-brand {
         font-size: 14px;
     }
+    .navbar-nav > li > a, .navbar-brand {
+        color: #000;
+    }
 }
+
 .header {
     padding-bottom: 60px;
     img {
@@ -48,10 +54,12 @@ body {
     }
 }
 
-.content {
-    float: right;
+.right-column {
+    float: left;
     width: 75%;
+    max-width: 900px;
 }
+
 .left-column {
     float: left;
     width: 25%;
@@ -63,26 +71,79 @@ body {
         font-family: $additional-font-family;
         font-size: 14px;
         padding-left: 40px;
+        ul {
+            width: 200px;
+        }
         li > a {
             display: block;
-            padding: 4px 20px;
+            padding: 4px 0px;
             font-weight: 500;
             color: #000;
         }
 
         .active > a {
-            font-weight: 700;
             color: #34880a;
+            border-top: 1px solid #34880a;
         }
         &.affix-top {
-            padding-top: 30px;
+            padding-top: 20px;
         }
         &.affix {
-            top: 100px;
+            top: 50px;
         }
     }
 }
 
+.chapter {
+    padding-bottom: 85px;
+    float: left;
+
+    blockquote, .content {
+        max-width: 645px;
+        float: left;
+    }
+    .reference {
+        float: right;
+        width: 170px;
+        font-size: 14px;
+        margin: 5px 0px 0px 0px;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .chapter {
+        .reference {
+            margin: 5px 0px 0px 5px;
+        }
+    }
+}
+@media screen and (max-width: 1024px) {
+    .left-column {
+        display: none !important;
+    }
+    .right-column {
+        float: left;
+        width: 100%;
+        padding: 0px 10px 0px 20px;
+    }
+}
+@media screen and (max-width: 670px) {
+    .reference {
+        width: 100% !important;
+        text-align: right;
+        padding-right: 20px;
+    }
+    .blockquote {
+        .source {
+            display: none !important;
+        }
+    }
+    .navbar {
+        .navbar-header {
+            padding-left: 0px;
+        }
+    }
+}
 
 h3 {
     font-size: 44px;
@@ -102,7 +163,7 @@ h4 {
     width: 100%;
     .text {
         display: inline-block;
-        width: 443px;
+        max-width: 443px;
         border-bottom: 1px solid #9D9D9D;
         border-top: 1px solid #9D9D9D;
         font-family: Roboto;
@@ -120,24 +181,28 @@ h4 {
 .hanging-apostrophe {
     margin-left: -0.5em;
 }
-.highlight {
-    font-style: italic;
-    margin-top: -$spacing-unit * 0.4;
-    margin-bottom: $spacing-unit / 2;
 
-    &.long {
-        margin-top: $spacing-unit * 0.5;
-    }
-}
-.citation {
+.reference-block {
     float: left;
-    font-family: Roboto;
-    font-size: 24px;
-    margin-bottom: $spacing-unit;
-    .content {
-        padding-left: $spacing-unit;
+    padding: 35px 0px;
+    width: 100%;
+
+    blockquote {
+        font-family: $additional-font-family;
+        &.highlight {
+            font-style: italic;
+            font-family: $base-font-family;
+            ul {
+                margin-top: 0px;
+            }
+        }
+        font-size: 24px;
+        border-left: none;
     }
 }
+
+
+
 
 ul {
     margin-top: -$spacing-unit * 0.4;
@@ -165,21 +230,6 @@ ul {
     }
 }
 .clear-fix {
-    margin-bottom: 0px;
+    margin-bottom: 0px !important;;
 }
 
-.chapter {
-    padding-bottom: 85px;
-    float: left;
-
-    .content {
-        width: 645px;
-        float: left;
-    }
-    .reference {
-        float: left;
-        width: 170px;
-        font-size: 14px;
-        margin: 5px 0px 0px 75px;
-    }
-}
